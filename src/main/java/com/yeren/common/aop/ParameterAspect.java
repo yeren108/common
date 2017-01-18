@@ -8,6 +8,8 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint;
 import org.springframework.stereotype.Component;
 
@@ -18,8 +20,9 @@ import com.yeren.common.parameter.BasicRequestParameter;
 @Aspect
 @Component
 public class ParameterAspect {
+	static final Logger log = LoggerFactory.getLogger(ParameterAspect.class);
 	public ParameterAspect() {
-		System.out.println("初始化参数切面类...");
+		log.info("初始化参数切面类......");
 	}
 
 	@Pointcut("@annotation(com.yeren.common.aop.annotation.Parameter)")
@@ -28,8 +31,8 @@ public class ParameterAspect {
 	
 	@Around("controllerInteceptor()")
 	public Object around(ProceedingJoinPoint pjp) throws Throwable{
-		System.out.println("");
-		System.out.println("<<参数(拦截器):Start===");
+		log.info("");
+		log.info("<<参数(拦截器):Start===");
 		Object[] args = pjp.getArgs();
 		MethodInvocationProceedingJoinPoint mjp = (MethodInvocationProceedingJoinPoint) pjp;
 		MethodSignature signature = (MethodSignature) mjp.getSignature();
@@ -47,8 +50,8 @@ public class ParameterAspect {
 //	        	throw new BaseException("555",f.getName()+"参数为空");
 //	        }
 	    }
-		System.out.println("=====参数(拦截器):End>>");
-		System.out.println("");
+		log.info("=====参数(拦截器):End>>");
+		log.info("");
 		return pjp.proceed(args);
 	}
 	
