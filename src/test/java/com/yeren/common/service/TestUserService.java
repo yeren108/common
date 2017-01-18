@@ -39,9 +39,9 @@ public class TestUserService {
 		userService.update(user);
 	}
 
-	// @Test
+	@Test
 	public void TestGetUserById() {
-		User user = userService.getUserById(1);
+		User user = userService.find(3);
 		System.out.println(user.getMobile());
 	}
 
@@ -53,7 +53,7 @@ public class TestUserService {
 		System.out.println(user.getMobile());
 	}
 
-	@Test
+//	@Test
 	public void TestGetUserNum() {
 		long userNum = userService.getUserNum();
 		System.out.println(userNum);
