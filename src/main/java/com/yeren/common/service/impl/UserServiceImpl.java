@@ -7,44 +7,45 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.yeren.common.bo.User;
-import com.yeren.common.dao.UserDAO;
+import com.yeren.common.dao.UserDao;
 import com.yeren.common.service.UserService;
-@Service
+
 @Transactional
-public class UserServiceImpl implements UserService{
+@Service
+public class UserServiceImpl implements UserService {
 	@Autowired
-	UserDAO userDAO;
-	
-	@Override
-	public void save(User user) {
-		userDAO.save(user);
-	}
+	UserDao userDao;
 
 	@Override
-	public void delete(User user) {
-		// TODO Auto-generated method stub
+	public void save(User user) {
+		userDao.save(user);
 	}
 
 	@Override
 	public void update(User user) {
-		userDAO.update(user);
+		userDao.update(user);		
 	}
 
 	@Override
-	public List<User> find(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public void delete(User user) {
+		userDao.delete(user);		
 	}
 
 	@Override
-	public User findById(Integer id) {
-		return userDAO.find(id);
+	public User getUserById(int id) {
+		return userDao.getUserById(id);
 	}
 
 	@Override
-	public List<User> findByAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		return null;
+	public long getUserNum() {
+		return userDao.getUserNum();
 	}
+
+	@Override
+	public List<User> findUserByUsername(String username) {
+		return userDao.findUserByUsername(username);
+	}
+
+
 
 }
