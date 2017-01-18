@@ -22,7 +22,7 @@ public @interface Parameter {
 	public String parameterIndex() default "-1";
 	
 	/**
-	 *  示例1：
+	 *  示例：
 	 *  Patameter(group="key|user&value,age|code")
 	 *  以上情况是两组第一组是，如果key为空，那么user ,value必须非空，否则反之
 	 *  第二组是，age和code必须有一个是非空的

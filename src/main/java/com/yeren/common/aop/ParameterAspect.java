@@ -34,19 +34,15 @@ public class ParameterAspect {
 		MethodInvocationProceedingJoinPoint mjp = (MethodInvocationProceedingJoinPoint) pjp;
 		MethodSignature signature = (MethodSignature) mjp.getSignature();
 		Method method = signature.getMethod();
-
 		Parameter parameter = method.getAnnotation(Parameter.class);
 		Object obj = getParameter(args, parameter);
 		BasicRequestParameter basicRequestParameter=(BasicRequestParameter)obj;
-		
 		Field[] declaredFields = basicRequestParameter.getClass().getDeclaredFields();
-		
-		
 		for ( int i = 0 ; i < declaredFields. length ; i++){
-	        Field f = declaredFields[i];
-	        f.setAccessible( true ); // 设置些属性是可以访问的
-	        Object val = f.get(basicRequestParameter); // 得到此属性的值    
-	        System. out .println(f.getName()+ "：" +val);
+	        Field field = declaredFields[i];
+	        field.setAccessible( true ); // 设置些属性是可以访问的
+	        Object val = field.get(basicRequestParameter); // 得到此属性的值    
+	        System. out .println(field.getName()+ "：" +val);
 //	        if(val==null){
 //	        	throw new BaseException("555",f.getName()+"参数为空");
 //	        }
@@ -65,8 +61,5 @@ public class ParameterAspect {
 		}
 		return null;
 	}
-	
-	
-	
 
 }

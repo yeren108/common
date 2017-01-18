@@ -20,10 +20,4 @@ public class BasicRequestParameter {
 		this.password = password;
 	}
 
-	@Override
-	public String toString() {
-		return "BasicRequestParameter [username=" + username + ", password="
-				+ password + "]";
-	}
-
 }
