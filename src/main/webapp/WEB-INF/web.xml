@@ -80,11 +80,16 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-	<!--dispatcher mvc -->
+	<!--springMVC -->
 	<servlet>
-		<servlet-name>dispatcher</servlet-name>
+		<servlet-name>springMVC</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<load-on-startup>2</load-on-startup>
+		<init-param>  
+            <param-name>contextConfigLocation</param-name>  
+            <param-value>classpath:*.xml</param-value> 
+        </init-param>  
+        <load-on-startup>1</load-on-startup>
+		
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>
@@ -131,7 +136,7 @@
 		<url-pattern>*.jpeg</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
+		<servlet-name>springMVC</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 

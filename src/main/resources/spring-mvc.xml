@@ -3,6 +3,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
@@ -10,7 +11,7 @@
     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context-3.0.xsd
-     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 	<context:annotation-config />
 
@@ -20,7 +21,7 @@
 	
 
 	<mvc:annotation-driven />
-	<mvc:resources mapping="/static/**" location="/static/" />
+	<mvc:resources mapping="/static/*" location="/static/" />
 
 	<!-- 数据返回格式 -->
 	<bean id="mappingJacksonHttpMessageConverter"
@@ -37,8 +38,7 @@
 		<!-- maxUploadSize:文件上传的最大值以byte为单位（） -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
 		p:defaultEncoding="UTF-8" 
-		p:maxUploadSize="20480000" 
-		p:uploadTempDir="upload/temp" />
+		p:maxUploadSize="20480000" />
   	
   	<!-- 本地化解析器2（这里使用的是CookieLocaleResolver） -->
   	<!-- 其他的实现方式：AcceptHeaderLocaleResolver，SessionLocaleResolver，LocaleChangeInterceptor） -->
@@ -76,7 +76,6 @@
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:prefix="/WEB-INF/views/" p:suffix=".jsp" />
-	</bean>
 	
 	<!-- 配置AOP 此处的顺序不能乱，它和过滤器一样有先后顺序之分(具体的看业务逻辑) -->
 	<aop:aspectj-autoproxy proxy-target-class="true"/>  

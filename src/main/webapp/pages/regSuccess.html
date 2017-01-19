@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>注册成功</title>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<link rel="stylesheet" href="../resources/boostrtap/css/bootstrap.min.css">
+    
+  </head>
+  
+  <body style="background-color: #f3f3f3">
+  <div class="container-fluid" >
+	  	<div class="row banner" >
+			<div class="col-xs-1 col-sm-1 banner-left">
+				<img src="../resources/images/index_26.png" onclick="history.go(-1)"/>
+			</div>
+			<div class="col-xs-10 col-sm-10 banner-center" id="title" >注册成功</div>
+			<div class="col-xs-1 col-sm-1 " >&nbsp;&nbsp;</div>				
+		</div>
+	</div>
+		<div id="pic" style="margin-top: 110px;text-align: center;">
+			<img style="width: 80px;height: 80px;" src="/portal/resources/images/regSuccess.png">
+		</div>
+		<div id="notice1" style="margin-top:5px;color: #000;text-align: center;font-size: 19px;">
+			注册成功
+		</div>
+		<div id="tips" style="margin-top:40px;color: #39b8ef;text-align: center;font-size: 17px;">
+			5秒后自动跳转至个人中心
+		</div>
+	
+	</body>
+</html>
+
+<script src="//cdn.bootcss.com/jquery/2.2.0/jquery.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#tips").html("<span class='context'>如未响应，<a href='online.html'>跳转到个人中心！</a></span>");
+	});
+
+	function GetQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null)
+			return unescape(r[2]);
+		return null;
+	}
+
+	var t = 5;//设定跳转的时间 
+	function refer() {
+		if (t == 0) {
+			location = "online.html"; //#设定跳转的链接地址 
+		} else {
+			$("#tips").html(
+					"<span class='context'>" + t + "秒后跳到个人中心。</span>");
+			t--; // 计数器递减 
+		}
+	}
+	setInterval("refer()", 1000); //启动1秒定时 
+</script>
+

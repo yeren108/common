@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>common</title>
+		<meta name="keywords" content="keyword1,keyword2,keyword3">
+		<meta name="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="format-detection" content="telephone=no" />
+		<link href="../static/css/login.css" rel="stylesheet" />
+		<link href="../static/plug/msg/IOS-msgbox-3.2.css" rel="stylesheet" />
+		
+	</head>
+	<body>
+		<div class="container-fluid" style="height: 30%;">
+  			<!-- 头部标题栏 -->
+			<div class="row banner" >
+				<div class="col-xs-12 col-sm-12 banner-center" id="title" >登陆</div>
+			</div>
+		</div>
+		
+		<div class="header" style="margin-bottom: 0px;">
+			<p align="center">
+				<img src="../static/images/logo@3x.png"><br />
+			</p>
+		</div>			
+		
+			<div id="normal" style="display:block">
+				<div class="inputDiv" id="inputDivNormal">
+					<div style="margin: 12px 0">
+						<img alt="账号" style="text-align: center;vertical-align: middle;display: inline-block;" src="../static/images/icon_1@3x.png">
+						<input id="username" type="text" style="vertical-align: middle;text-indent: 5px;width:90%;padding-left: 7px;" placeholder="手机号/用户名" />
+					</div>
+					<div style="border-bottom:1px solid #e9e9e9;margin: 15px -15px 15px 0px;" ></div>
+					<div style="margin: 12px 0">
+						<img alt="密码" style="text-align: center;vertical-align: middle;display: inline-block;" src="../static/images/icon_3@3x.png">
+						<input id="password" type="password" style="vertical-align: middle;text-indent: 5px;width:90%;padding-left: 7px;" placeholder="请输入密码" 　/>
+					</div>
+					<div style="border-bottom:1px solid #e9e9e9;margin: 15px -15px 15px 0px;" ></div>
+				</div>
+				<div style="text-align: center;margin:15px 15px;padding:0px 0px;">
+					<input id="BtnNomal" class="login_btn" type="button" value="登录" >
+				</div>
+				<div style="text-align: center;margin:15px 15px;padding:0px 0px;">
+					<div id="fastLogin" class="normal" >手机快捷登录</div>
+				</div>
+			</div>
+			<div class="loginForm">
+			<div id ="fast" style="display:none">		
+				<div class="inputDiv" id="inputDivFast">
+					<div style="margin: 12px 0">
+						<img alt="账号"
+							style="text-align: center;vertical-align: middle;display: inline-block;"
+							src="../static/images/icon_1@3x.png">
+						<input id="mobile" type="text" style="vertical-align: middle;text-indent: 5px;width:90%;padding-left: 7px;" placeholder="手机号" />
+					</div>
+					<div style="border-bottom:1px solid #e9e9e9;margin: 15px -15px 15px 0px;" ></div>
+					<div style="margin: 12px 0">
+						<img alt="密码" style="text-align: center;vertical-align: middle;display: inline-block;" src="../static/images/icon_2@3x.png">
+						<input id="yan1" type="text" style="vertical-align: middle;text-indent: 5px;width:60%;padding-left: 7px;"placeholder="请输入短信验证码" /> 
+						<input id="yan2" type="button" style="vertical-align: middle;" value="获取验证码" />
+					</div>			
+					<div style="border-bottom:1px solid #e9e9e9;margin: 15px -15px 15px 0px;" ></div>
+				</div>
+				<div style="text-align: center;margin:15px 15px;padding:0px 0px;">
+					<input id="BtnFast" class="login_btn" type="button" value="登录" />
+				</div>
+				<div style="text-align: center;margin:15px 15px;padding:0px 0px;">
+					<div id="normalLogin" class="normal" >账号密码登录</div>
+				</div>
+			</div>
+			
+		</div>
+		<div style="padding-bottom:10%;padding-top: 10%;">
+			<div style="float: left;width: 50%;text-align: right;border-right: 1xp solid #e9e9e9">  
+				<a href="register.html" style="margin:0px 10px 0px 20px;font-size: 14px;border-right: 1xp solid #e9e9e9">注册账户</a>
+			</div>
+			<div style="width: 50%;float: left;text-align: left;border-left: 1xp solid #e9e9e9">
+				<a href="findPassword.html" style="margin:0px 20px 0px 10px;font-size: 14px;border-left: 1xp solid #e9e9e9">忘记密码</a>
+			</div>
+		</div>
+		
+	
+	</body>
+</html>
+<script src="../static/plug/jquery/jquery-1.9.1.min.js"></script>
+<script src="../static/plug/msg/IOS-msgbox-3.2.js"></script>
+<script src="../static/plug/alert/appAlert.js"></script>
+<script src="../static/js/login.js"></script>

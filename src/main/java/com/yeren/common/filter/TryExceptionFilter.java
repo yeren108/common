@@ -13,9 +13,12 @@ import javax.servlet.ServletResponse;
 
 import net.sf.json.JSONObject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import com.yeren.common.aop.ParameterAspect;
 import com.yeren.common.constrant.ExceptionExcuteModel;
 import com.yeren.common.exception.BaseException;
 import com.yeren.common.result.BaseResult;
@@ -25,7 +28,7 @@ import com.yeren.common.result.BaseResult;
  */
 @Component(value = "tryExceptionFilter")
 public class TryExceptionFilter implements Filter {
-
+	static final Logger log = LoggerFactory.getLogger(ParameterAspect.class);
     private static final String RESPONSE_ENCODING="UTF-8";
     private static final String ERROR="500";
     private static final String ERROR_MSG="系统异常:";
@@ -55,7 +58,7 @@ public class TryExceptionFilter implements Filter {
 			
 		}
 		
-		System.out.println("f");
+		log.info("拦截器结束...");
 
 	}
 
