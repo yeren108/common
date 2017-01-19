@@ -10,23 +10,50 @@
     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context-3.0.xsd
-     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 	<context:annotation-config />
-	<mvc:annotation-driven />
 
-	<context:component-scan base-package="com" use-default-filters="false">
+	<context:component-scan base-package="com.yeren" use-default-filters="false">
 		<context:include-filter type="regex" expression="com.yeren.common.controller.*" />
 	</context:component-scan>
 	
 
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
+	<mvc:annotation-driven />
+	<mvc:resources mapping="/static/**" location="/static/" />
 
+	<!-- 数据返回格式 -->
+	<bean id="mappingJacksonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>application/json;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- 文件上传解析器1 -->
+		<!-- maxUploadSize:文件上传的最大值以byte为单位（） -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
+		p:defaultEncoding="UTF-8" 
+		p:maxUploadSize="20480000" 
+		p:uploadTempDir="upload/temp" />
   	
+  	<!-- 本地化解析器2（这里使用的是CookieLocaleResolver） -->
+  	<!-- 其他的实现方式：AcceptHeaderLocaleResolver，SessionLocaleResolver，LocaleChangeInterceptor） -->
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"  
+		p:cookieName="clientlanguage" 
+		p:cookieMaxAge="100000" 
+		p:cookiePath="/" 
+		p:defaultLocale="zh_CH" />  
+	
+	<!-- 主题解析器 3-->
+	<!-- 处理器映射器4-->
+	<!-- 处理器适配器5-->
+	
+
+  	<!-- 异常处理解析器6 -->
 	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">    
 		<property name="exceptionMappings">    
 		    <props>    
@@ -40,12 +67,15 @@
 		        <prop key="errors/404">404</prop>    
 		    </props>    
 		</property>    
-		<!--  设置日志输出级别，不定义则默认不输出警告等错误日志信息  -->    
 		<property name="warnLogCategory" value="WARN"></property>    
-		<!--  默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置   -->   
-		 <property name="defaultErrorView" value="errors/error"></property>    
-		<!--  默认HTTP状态码    --> 
+		<property name="defaultErrorView" value="errors/error"></property>    
 		<property name="defaultStatusCode" value="500"></property>    
+	</bean>
+	
+	<!-- 视图解析器8 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/WEB-INF/views/" p:suffix=".jsp" />
 	</bean>
 	
 	<!-- 配置AOP 此处的顺序不能乱，它和过滤器一样有先后顺序之分(具体的看业务逻辑) -->
