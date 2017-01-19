@@ -29,9 +29,9 @@ var yanTimeout=function() {
 $(document).ready(function(){
 	var sessionToken = localStorage.getItem("sessionToken");
 	
-	if(sessionToken!=null&&sessionToken!="null"){
+	/*if(sessionToken!=null&&sessionToken!="null"){
 		window.location.href="/common/pages/online.html";
-	}
+	}*/
 	
 	$('#fastLogin').click(function(){
 		document.getElementById("fast").style.display='block';

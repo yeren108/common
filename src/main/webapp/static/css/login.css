@@ -1,25 +1,23 @@
 @CHARSET "UTF-8";
 
 input[type="button"], input[type="submit"], input[type="reset"] {
-
--webkit-appearance: none;
-
+	-webkit-appearance: none;
 }
 
-textarea {  -webkit-appearance: none;}   
+textarea {
+	-webkit-appearance: none;
+}
 
 A {
 	text-decoration: NONE;
 	color: #39b8ef;
 }
-.left-position{
-	text-align:left;
-}
-.right-position{
-	text-align:right;
-}
 
+/* 以上为系统设置 */
+/* ************************************************************************************ */
 
+/* 以下为页面设置 */
+/* ************************************************************************************ */
 .msgBox {
 	height: auto;
 	border: 1px solid transparent;
@@ -28,7 +26,7 @@ A {
 	font-size: 16px;
 	position: fixed;
 	z-index: 9999;
-	padding:12px;
+	padding: 12px;
 	text-align: center;
 	font-family: 黑体 !important;
 	border-radius: 10px;
@@ -36,222 +34,142 @@ A {
 	cursor: pointer;
 }
 
-
-body{
-	width:100%;
-	height:100%;
-	margin:0px;
-	padding:0px;
-	background-color:#fff;
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-color: #fff;
 }
 
-		
-div.header{
-	text-align:center;
-	padding:0px 0px 0px 0px;
+div.header {
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+	margin-bottom: 0px;
 }
 
-
-
-
-.header img{
-    width: 170px;
-    height: 36px;
-    margin-bottom: 4%;
-    margin-top: 11%;
-}
-.bindHeader img{
-	width: 94px;
-	height:94px;
-	margin-bottom: 25px;
-    margin-top: 10px;
+.header img {
+	width: 170px;
+	height: 36px;
+	margin-bottom: 4%;
+	margin-top: 11%;
+	text-align: center;
 }
 
-.inputDiv div img{
-	width: 6%;
-}
-
-div.loginForm{	
-	height:auto;
-}
-div.inputDiv{
-	padding-left:15px;
-	padding-right:15px;
+div.inputDiv {
+	padding-left: 15px;
+	padding-right: 15px;
 	height: auto;
 	background-color: white;
 }
 
-div.inputDiv div input{
-	color:#000;
-	border:2px;
-	font-size: 15px;
-	text-indent:0px;
-	outline:none;
-	background-color: white;
-	height:20px;
-	line-height:20px;
-	padding:0;
-	text-align:left;
-} 
-
-
-#yan1{
-	color:#000;
-	border:2px;
-	font-size: 15px;
-	text-indent: 0px;
-	outline:none;
-	background-color: white;
-	height:20px;
-	line-height:20px;
-	padding:0;
-	text-align:left;
-	
-	
-	width: 33%;
-	outline:none;
+.inputDiv img {
+	width: 6%;
+	text-align: center;
+	vertical-align: middle;
 	display: inline-block;
-} 
-  		
-  		
-#yan2{
-    float: right;
-    border-color: black;
-    background-color:white;
-    width: 27%;
-    font-size: 15px;
-    text-indent: 0px;
-    color: #39b8ef;
-    text-align: right;
-} 
-
-#pwd3{
-    float: right;
-    border-color: black;
-    background-color:white;
-    width: 22%;
-    font-size: 16px;
-    text-indent: 0px;
-    color: #39b8ef;
-    text-align: right;
-} 
+}
 
 .login_btn {
 	background-color: #39b8ef;
 	border-radius: 5px;
-	border:0px;	  		
-	width:100%;	
-    font-size: 16px;
-    line-height:41px;
-    padding:0px;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-    
-    height: 44px;
-	background-position:0px 0px;
-	background-size:100% 100%;/*根据背景的源图片和父几点的宽高来调节实际背景图片大小*/
-	-moz-background-size:100% 100%; /* 老版本的 Firefox */
+	border: 0px;
+	width: 100%;
+	font-size: 16px;
+	line-height: 41px;
+	padding: 0px;
+	color: white;
+	cursor: pointer;
+	text-align: center;
+	height: 44px;
+	background-position: 0px 0px;
+	background-size: 100% 100%; /*根据背景的源图片和父几点的宽高来调节实际背景图片大小*/
+	-moz-background-size: 100% 100%; /* 老版本的 Firefox */
 }
 
 .normal {
-	border:0px;	  		
-	width:100%;	
-    font-size: 12px;
-    line-height:35px;
-    color: #39b8ef;
-    cursor: pointer;
-    text-align: center;
-	-moz-background-size:100% 100%; /* 老版本的 Firefox */
+	border: 0px;
+	width: 100%;
+	font-size: 12px;
+	line-height: 35px;
+	color: #39b8ef;
+	cursor: pointer;
+	text-align: center;
+	-moz-background-size: 100% 100%; /* 老版本的 Firefox */
+}
+
+div.inputDiv input {
+	color: #000;
+	border: 2px;
+	font-size: 15px;
+	text-indent: 0px;
+	outline: none;
+	background-color: white;
+	height: 20px;
+	line-height: 20px;
+	padding: 0;
+	text-align: left;
+	vertical-align: middle;
+	text-indent: 5px;
+	width: 90%;
+	padding-left: 7px;
+}
+
+.line {
+	border-bottom: 1px solid #e9e9e9;
+	margin: 15px -15px 15px 0px;
+}
+
+#yan1 {
+	color: #000;
+	border: 2px;
+	font-size: 15px;
+	text-indent: 5px;
+	outline: none;
+	background-color: white;
+	height: 20px;
+	line-height: 20px;
+	padding: 0;
+	text-align: left;
+	width: 33%;
+	outline: none;
+	display: inline-block;
+}
+
+#yan2 {
+	float: right;
+	border-color: black;
+	background-color: white;
+	width: 27%;
+	font-size: 15px;
+	text-indent: 5px;
+	color: #39b8ef;
+	text-align: right;
+}
+
+#pwd3 {
+	float: right;
+	border-color: black;
+	background-color: white;
+	width: 22%;
+	font-size: 16px;
+	text-indent: 0px;
+	color: #39b8ef;
+	text-align: right;
 }
 
 
-input::-moz-placeholder { 
-	text-align:left;
-}
-  		
-input::-webkit-input-placeholder { 
-  	text-align:left;
-}
- 		
 .banner {
-  background-color: #39B8EF;
-  font-weight: 600;
-  color: white;
-  height: 50px;
-}
-
-.banner-left {
-  text-align: center;
-  line-height: 50px;
-  padding-right: 0px !important;
+	background-color: #39B8EF;
+	font-weight: 600;
+	color: white;
+	height: 50px;
 }
 
 .banner-center {
-  text-align: center;
-  line-height: 50px;
-  font-size: 18px;
-  padding-right: 0px !important;
-  padding-left: 0px !important;
-}
-
-.banner-left img {
-  width: 15px;
-  height: 20px;
-}
-
-
-
-#unloadMask{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	opacity: 0.8;
-	background: #626262;
-	display: block;
-	z-index: 99999;
-	color: black;
-	font-family: Microsoft Yahei;
 	text-align: center;
-	vertical-align: middle;
-}
-
-.maskInfo{
-	background-color: black;
-	z-index: 999999;
-	width: 200px;
-	height:100px;
-	line-height: 100px;
-	color: white;
-	margin: 0 auto;
-	top: 35%;
-	position:relative;
-	border: 2px solid #3e4c52;
-	font-size: 16px;	
-}
-
-.gotoLink{
-	width: 96%;
-	height: 50px;
-	margin: 0 2%;
-	text-align: center;
-}
-
-.gotoLink a{
-	color: #17ade9;
-	font-size: 16px;
-	font-family: Microsoft YaHei;
 	line-height: 50px;
-	text-decoration: none;
+	font-size: 18px;
+	padding-right: 0px !important;
+	padding-left: 0px !important;
 }
-
-
-.choice{
-	
-}
-
-
-  		
-		
