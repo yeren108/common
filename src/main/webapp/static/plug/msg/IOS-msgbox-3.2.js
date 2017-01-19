@@ -108,10 +108,10 @@ var IOSMsgbox=function(title){
 
 	that.alert=function(){
 		setTimeout(showAll,200);
-		$(window).onseries("resize",false,false,function(){
+		/*$(window).onseries("resize",false,false,function(){
 			var msgbox=$(".imsgbox");
 			msgbox?setHalfTop(msgbox):false;
-		},500);
+		},500);*/
 	};
 
 	var removeAll=function(fn){

@@ -1,14 +1,18 @@
 package com.yeren.common.service;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import com.yeren.common.bo.User;
+import com.yeren.common.dto.UserDto;
 
 public interface UserService {
 	void save(User user);
-	void update(User user);
 	void delete(User user);
+	void update(User user);
 	User find(int id);
+	List<UserDto> findUserByUsername(String username) throws IllegalAccessException, InvocationTargetException;
+	UserDto register(User user);
+	UserDto login(String username,String password);
 	long getUserNum();
-	List<User> findUserByUsername(String username);
 }

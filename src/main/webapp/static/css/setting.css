@@ -1,0 +1,163 @@
+@CHARSET "UTF-8";
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+
+-webkit-appearance: none;
+
+}
+.head{
+	height:45px;
+}
+
+.security{
+	height:50px;
+}
+
+.left-position{
+	text-align:left;
+	padding-left: 30px;
+	padding-top: 10px;
+}
+
+.center-position{
+	text-align:left;
+	padding-top: 30px;
+	padding-left: 0px;
+}
+
+.right-position{
+	text-align:right;
+	padding-top: 42px;
+	padding-right: 30px;
+}
+
+.left-location{
+	text-align:left;
+	padding-left: 30px;
+	padding-top: 8px;
+}
+
+.right-location{
+	text-align:right;
+	padding-top: 8px;
+	padding-right: 30px;
+}
+
+.left-info{
+	text-align:left;
+	padding-left: 30px;
+	padding-top: 20px;
+}
+
+.right-info{
+	text-align:right;
+	padding-right: 30px;
+	padding-top: 2px;
+}
+
+.right-userid{
+	text-align:right;
+	padding-right: 15px;
+	padding-top: 20px;
+}
+
+.right-security{
+	text-align:right;
+	padding-right: 30px;
+	padding-top: 15px;
+}	
+
+.firstBlock{
+	background-color:#fff;
+	text-align:center;
+	font-size: 20px;
+	height: 40%;
+	
+}
+
+.firstBlock div{
+	margin:0 auto;
+	background-color:#fff;
+	padding: 3px;
+	
+}
+
+
+.secondBlock{
+	background-color:#fff;
+	text-align:center;
+	font-size: 15px;
+	height: 40%;
+	
+}
+
+
+img{
+	width: 100px;
+  	height: 100px;
+  	margin: 14px;
+}
+
+.text4 img{
+	width: 30px;
+  	height: 30px;
+  	margin: 0px;
+}
+
+
+.text1{
+	font-weight: bold;
+	float: left;
+	width: 54%;
+	font-size: 25px;
+	text-align: right;
+}
+
+
+.text2{
+	font-weight: bold;
+	width: 72%;
+	font-size: 25px;
+	padding-bottom: 20px;
+	text-align: left;
+	color: green;
+}
+
+.text3{
+	float: left;
+	padding-left: 20px;
+}
+
+.text4{
+	text-align: right;
+	padding-right: 20px;
+}
+
+.line{
+	width:90%;
+	border-bottom:1px solid #eeeeee;
+	margin: 8px 5% 8px 5%;
+}
+
+.loginOut{
+	background-color: #ff0000;
+	border-radius: 5px;
+	border:0px;	  		
+	width:90%;	
+    font-size: 19px;
+    line-height:44px;
+    padding:0px;
+    margin:20px 5% 20px 5%;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    
+    height: 44px;
+	background-position:0px 0px;
+	background-size:100% 100%;/*根据背景的源图片和父几点的宽高来调节实际背景图片大小*/
+	-moz-background-size:100% 100%; /* 老版本的 Firefox */
+}
+
+
+
+

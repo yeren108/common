@@ -1,5 +1,6 @@
 package com.yeren.common.service;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.junit.Test;
@@ -9,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.yeren.common.bo.User;
+import com.yeren.common.dto.UserDto;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext-test.xml")
@@ -46,9 +48,9 @@ public class TestUserService {
 	}
 
 	// @Test
-	public void TestFindUserByUsername() {
-		User user = null;
-		List<User> listUser = userService.findUserByUsername("yeren");
+	public void TestFindUserByUsername() throws IllegalAccessException, InvocationTargetException {
+		UserDto user = null;
+		List<UserDto> listUser = userService.findUserByUsername("yeren");
 		user = listUser.get(0);
 		System.out.println(user.getMobile());
 	}

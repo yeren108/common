@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>注册</title>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<link href="../static/plug/msg/IOS-msgbox-3.2.css" rel="stylesheet" />
+	<link href="../static/css/register.css" rel="stylesheet" />
+  </head>
+  <body>
+  	<div>
+	  	<div class="banner" >
+			<div class="banner-left">
+				<img src="../static/images/index_26.png" onclick="history.go(-1)"/>
+			</div>
+			<div banner-center" id="title" >注册</div>
+		</div>
+	</div>
+	
+	<div class="header">
+			<div align="center">
+				<img src="../static/images/logo@3x.png"><br />
+			</div>
+		</div>			
+		
+		<div id="normal">
+			<div class="inputDiv" id="inputDivRegister">
+				<div style="margin: 12px 0">
+					<img alt="账号" src="../static/images/icon_1@3x.png">
+					<input id="username" type="text" placeholder="请输入用户名" />
+				</div>
+				<div class="line"></div>
+				<div style="margin: 12px 0">
+					<img alt="手机号" src="../static/images/icon_2@3x.png">
+					<input id="mobile" type="text" placeholder="请输入手机号" /> 
+				</div>
+				<div class="line"></div>
+				<div style="margin: 12px 0">
+					<img alt="密码" src="../static/images/icon_3@3x.png">
+					<input id="password" type="password" style="width:72%;" placeholder="请设置大于6位的密码" 　/>
+					<input id="pwdShow" type="button" style="vertical-align: middle;background: url(../static/images/eye.png)no-repeat;background-position: right;width:12%;" for="pwdShow" />
+				</div>
+				<div class="line"></div>
+				<div style="margin: 12px 0;">
+					<img alt="图标" style="width: 4%;;text-align: center;vertical-align: middle;display: inline-block;" src="../static/images/icon_4@3x.png">
+					<input type="text" disabled="disabled" style="font-size:12px;vertical-align: middle;width:10%;padding-left: 7px;" value="同意" />
+					<input type="text" disabled="disabled" style="font-size:12px;color: #39b8ef;width:70%;" value="《yeren通行证注册协议》" />
+				</div>
+			</div>
+			<div style="text-align: center;margin:15px 15px;padding:0px 0px;">
+				<input id="register" class="login_btn" type="button" value="注册" >
+			</div>
+		</div>
+	
+
+</body>
+</html>
+<script src="../static/plug/jquery/jquery-1.9.1.min.js"></script>
+<script src="../static/plug/jquery/jquery.toggle-password.min.js"></script>
+<script src="../static/js/register.js"></script>
+<script src="../static/plug/msg/IOS-msgbox-3.2.js"></script>
+<script src="../static/plug/alert/appAlert.js"></script>
+	
