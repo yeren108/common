@@ -100,7 +100,7 @@ $(document).ready(function(){
 				"password":password
 			},
 			success : function(data) {
-				if (data.code="200") {
+				if (data.code=="200") {
 					removeButtonDisabled("#BtnNomal");
 					localStorage.setItem("sessionToken", data.data.sessionToken);
 					localStorage.setItem("userid", data.data.userid);

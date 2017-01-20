@@ -25,7 +25,7 @@ public class BaseResult<T> implements Serializable {
 		this.data = data;
 	}
 
-	public BaseResult(String msg, String code, T data) {
+	public BaseResult(String code, String msg,  T data) {
 		super();
 		this.msg = msg;
 		this.code = code;

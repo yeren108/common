@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yeren.common.aop.annotation.Parameter;
 import com.yeren.common.bo.User;
+import com.yeren.common.constrant.CodeConstant;
 import com.yeren.common.constrant.ExceptionExcuteModel;
 import com.yeren.common.dto.UserDto;
 import com.yeren.common.exception.BaseException;
@@ -35,11 +36,15 @@ public class UserController {
 	@Parameter(require="username,password",model = ExceptionExcuteModel.RESTURN_JSON,parameter=BasicRequestParameter.class)
 	@ResponseBody
 	public BaseResult<Map<String,String>> login(HttpServletRequest request,HttpServletResponse response,BasicRequestParameter parameter) throws BaseException, IllegalAccessException, InvocationTargetException{
-		List<UserDto> listUser = userService.findUserByUsername(parameter.getUsername());
+		UserDto userDto = userService.login(parameter.getUsername(), parameter.getPassword());
 		Map<String, String> data=new HashMap<String, String>();
-		data.put("sessionToken",listUser.get(0).getUsername());
-		data.put("id",listUser.get(0).getId().toString());
-		return new BaseResult<Map<String,String>>("登录成功",data);
+		if(userDto!=null){
+			data.put("sessionToken",userDto.getUsername());
+			data.put("id",userDto.getId().toString());
+			return new BaseResult<Map<String,String>>("登录成功",data);
+		}
+		return new BaseResult<Map<String,String>>(CodeConstant.USERNAME_OR_PASSWORD_ERROR_EXCEPTION,CodeConstant.USERNAME_OR_PASSWORD_ERROR_EXCEPTION_MSG,data);
+		
 	}
 	
 	@RequestMapping(value="/register",method=RequestMethod.POST)

@@ -14,6 +14,7 @@ import org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint;
 import org.springframework.stereotype.Component;
 
 import com.yeren.common.aop.annotation.Parameter;
+import com.yeren.common.exception.BaseException;
 import com.yeren.common.parameter.BasicRequestParameter;
 
 
@@ -45,10 +46,10 @@ public class ParameterAspect {
 	        Field field = declaredFields[i];
 	        field.setAccessible( true ); // 设置些属性是可以访问的
 	        Object val = field.get(basicRequestParameter); // 得到此属性的值    
-	        System. out .println(field.getName()+ "：" +val);
-//	        if(val==null){
-//	        	throw new BaseException("555",f.getName()+"参数为空");
-//	        }
+	        log.info(field.getName()+ "：" +val);
+	        /*if(val==null){
+	        	throw new BaseException("555",field.getName()+"参数为空");
+	        }*/
 	    }
 		log.info("=====参数(拦截器):End>>");
 		log.info("");
