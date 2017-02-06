@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.yeren.common.bo.User;
 import com.yeren.common.dao.UserDao;
 import com.yeren.common.dto.UserDto;
+import com.yeren.common.exception.BaseException;
 import com.yeren.common.service.UserService;
 
 @Transactional
@@ -58,7 +59,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserDto login(String username, String password) {
+	public UserDto login(String username, String password) throws BaseException {
 		return userDao.login(username, password);
 	}
 
