@@ -60,5 +60,10 @@ public class TestUserService {
 		long userNum = userService.getUserNum();
 		System.out.println(userNum);
 	}
+	
+	@Test
+	public void TestSuccess() {
+		System.out.println("success test");
+	}
 
 }
