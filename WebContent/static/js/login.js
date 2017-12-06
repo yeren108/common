@@ -30,7 +30,7 @@ $(document).ready(function(){
 	var sessionToken = localStorage.getItem("sessionToken");
 	
 	/*if(sessionToken!=null&&sessionToken!="null"){
-		window.location.href="/common/pages/online.html";
+		window.location.href="/common-v1.0/pages/online.html";
 	}*/
 	
 	$('#fastLogin').click(function(){
@@ -93,7 +93,7 @@ $(document).ready(function(){
  	 var password = $("#password").val();
 	 if(checkBindSubmit()){
 		 $.ajax({
-			url:"/common/user/login",
+			url:"/common-v1.0/user/login",
 			type : "post",
 			data:{
 				"username":username,
@@ -104,7 +104,7 @@ $(document).ready(function(){
 					removeButtonDisabled("#BtnNomal");
 					localStorage.setItem("sessionToken", data.data.sessionToken);
 					localStorage.setItem("userid", data.data.userid);
-					window.location.href="/common/pages/online.html";
+					window.location.href="/common-v1.0/pages/online.html";
 				}else{
 					removeButtonDisabled("#BtnNomal");
 					var msgbox=new IOSMsgbox();
@@ -149,7 +149,7 @@ $(document).ready(function(){
 					removeButtonDisabled("#BtnNomal");
 					localStorage.setItem("sessionToken", data.data.sessionToken);
 					localStorage.setItem("id", data.data.id);
-					window.location.href="/common/pages/online.html";
+					window.location.href="/common-v1.0/pages/online.html";
 				}else{
 					removeButtonDisabled("#BtnNomal");
 					var msgbox=new IOSMsgbox();

@@ -30,7 +30,7 @@ $(document).ready(function(){
 		var flag = checkSubmitRegister();
 		var username = $("#username").val();
 		$.ajax({
-			url:"/common/user/exist",
+			url:"/common-v1.0/user/exist",
 			type : "get",
 			data:{
 				"username":username
@@ -43,7 +43,7 @@ $(document).ready(function(){
 				    	var mobile = $("#mobile").val();
 				    	var password = $("#password").val();
 				    	$.ajax({
-							url:"/common/user/register",
+							url:"/common-v1.0/user/register",
 							type : "post",
 							data:{
 								"username":username,
@@ -55,7 +55,7 @@ $(document).ready(function(){
 									removeButtonDisabled("#register");
 									localStorage.setItem("sessionToken", data.data.sessionToken);
 									localStorage.setItem("id", data.data.id);
-										window.location.href="/common/pages/regSuccess.html";
+										window.location.href="/common-v1.0/pages/regSuccess.html";
 								}else{
 									removeButtonDisabled("#register");
 									var msgbox=new IOSMsgbox();
@@ -115,7 +115,7 @@ $(document).ready(function(){
 function requestUserExsit(){
 	var username = $("#username").val();
 	$.ajax({
-		url:"/common/user/exist",
+		url:"/common-v1.0/user/exist",
 		type : "get",
 		data:{
 			"username":username
