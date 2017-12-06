@@ -25,8 +25,8 @@
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-		p:url="jdbc:mysql://localhost:3306/common" p:driverClassName="com.mysql.jdbc.Driver"
-		p:username="root" p:password="root" />
+		p:url="jdbc:mysql://50.116.3.99:3306/common" p:driverClassName="com.mysql.jdbc.Driver"
+		p:username="root" p:password="123456Ab$" />
 
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"

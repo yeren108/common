@@ -36,7 +36,7 @@ $(document).ready(function(){
 				"username":username
 			},
 			success : function(data) {
-				if (data.code=="400") {
+				if (data.code=="200") {
 					if(flag){
 				    	disabledButton("#register");
 				    	var username= $("#username").val();
