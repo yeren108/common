@@ -41,7 +41,7 @@ public class TestUserService {
 		userService.update(user);
 	}
 
-	@Test
+//	@Test
 	public void TestGetUserById() {
 		User user = userService.find(3);
 		System.out.println(user.getMobile());
